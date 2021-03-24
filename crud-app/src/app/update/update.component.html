@@ -1,0 +1,16 @@
+<div class="align-content-center d-flex flex-column row">
+    <div class="border col-6 p-3">
+        <h3>Update User</h3>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="first_name" required [(ngModel)]="user.first_name" name="first_name">
+            </div>
+            <div class="form-group">
+              <label for="name">Email</label>
+              <input type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="email">
+            </div>
+            <button type="submit" class="btn btn-success float-right">Submit</button>
+          </form>
+    </div>
+</div>

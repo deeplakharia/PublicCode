@@ -1,0 +1,36 @@
+<div class="bg-light">
+    <div class="row">
+        <div class="col-10">
+            <h3 class="pl-2">Users</h3>
+        </div>
+        <div class="col-2 text-center">
+            <button type="button" class="btn btn-success" [routerLink]="['/create']">Create</button>
+        </div>
+    </div>
+    <table class="table table-bordered table-hover table-striped text-center">
+        <thead>
+            <tr class="bg-primary" style="color: white;">
+                <th>#</th>
+                <th>Avatar</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td><img class="rounded-circle" style="width: 20%;" src="{{user.avatar}}" alt="{{user.first_name}}"></td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <a href="#" [routerLink]="['/update/', user.id]" aria-label="edit" class="p-1"><i aria-hidden="true" class="fa fa-lg fa-pencil-square-o text-warning"></i></a>
+                    <a href="#" [routerLink]="['/details/', user.id]" aria-label="detail" class="p-1"><i aria-hidden="true" class="fa fa-lg fa-info-circle"></i></a>
+                    <a (click)="onDelete(user.id)" aria-label="delete" class="p-1"><i aria-hidden="true" class="fa fa-lg fa-trash text-danger" style="cursor: pointer;"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
